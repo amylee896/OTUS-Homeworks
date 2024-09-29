@@ -72,3 +72,4 @@ else:
             break
 if is_negative_float:
     print('True')
+
