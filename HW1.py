@@ -1,6 +1,5 @@
 #1
-number=67345
-number=str(number)
+number=input('Enter the number: ')
 print(number[0]+number[3]+number[2]+number[1]+number[4])
 
 #2
