@@ -1,6 +1,9 @@
 #1
 number=input('Enter the number: ')
-print(number[0]+number[3]+number[2]+number[1]+number[4])
+if len(number)==5:
+    print(number[0]+number[3]+number[2]+number[1]+number[4])
+else:
+    print('Print five-digit number')
 
 #2
 number_of_days=int(input('Enter the number of days: '))
@@ -40,35 +43,47 @@ else:
  #5
  number = input("Enter the number: ")
  is_positive_float = False
- digits = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.']
 
- if number.count('.') > 1 or number[0] == '.' or number[-1] == '.':
+ if number.count('.') > 1 or number[-1] == '.':
      print('False')
+ elif number.count('.') == 1 and number[0] == '.':
+     split = number.split('.')
+     if split[1].isdigit():
+         is_positive_float = True
+ elif number.count('.') == 1:
+     split = number.split('.')
+     if split[0].isdigit() and split[1].isdigit():
+         is_positive_float = True
+     else:
+         print('False')
+ elif number.count('.') == 0 and number.isdigit():
+     is_positive_float = True
  else:
-     for letter in range(len(number)):
-         if number[letter] in digits:
-             is_positive_float = True
-         else:
-             is_positive_float = False
-             print(is_positive_float)
-             break
+     print('False')
  if is_positive_float:
      print('True')
 
- #5 for negative values
+#5 for negative values
 number = input("Enter the number: ")
 is_negative_float = False
-digits=['0','1','2','3','4','5','6','7','8','9','.']
 
-if number.count('.') > 1 or number[-1]=='.' or number[0]!='-':
+if number.count('.') > 1 or number[-1]=='.' or number[0]!='-' or number.count('-') > 1:
     print('False')
 else:
-    for letter in range(1,len(number)):
-        if number[letter] in digits:
+    if number.count('.')==1:
+        split=number.split('-')[1].split('.')
+        if split[0].isdigit() and split[1].isdigit():
             is_negative_float = True
         else:
-            is_negative_float=False
-            print(is_negative_float)
-            break
+            print('False')
+    elif number.count('.')==0:
+        split=number.split('-')
+        if split[1].isdigit():
+            is_negative_float = True
+        else:
+            print('False')
+    else:
+        is_negative_float=False
+        print(is_negative_float)
 if is_negative_float:
     print('True')
