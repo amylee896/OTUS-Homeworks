@@ -1,4 +1,4 @@
-#1
+#1 SUPER updated ALARM!
 number=int(input('Enter the number: '))
 number=str(number)
 summa=0
