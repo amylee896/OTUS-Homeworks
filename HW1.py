@@ -40,37 +40,37 @@ if dig_1 <=3 and arabic >= 1:
 else:
  print('Out of range')
 
- #5
- number = input("Enter the number: ")
- is_positive_float = False
+#5
+number = input("Enter the number: ")
+is_positive_float = False
 
- if number.count('.') > 1 or number[-1] == '.':
-     print('False')
- elif number.count('.') == 1 and number[0] == '.':
-     split = number.split('.')
-     if split[1].isdigit():
-         is_positive_float = True
- elif number.count('.') == 1:
-     split = number.split('.')
-     if split[0].isdigit() and split[1].isdigit():
-         is_positive_float = True
-     else:
-         print('False')
- elif number.count('.') == 0 and number.isdigit():
-     is_positive_float = True
- else:
-     print('False')
- if is_positive_float:
-     print('True')
+if number.count('.') > 1 or number[-1]=='.':
+    print('False')
+elif number.count('.')==1 and number[0]=='.':
+    split=number.split('.')
+    if split[1].isdigit():
+        is_positive_float = True
+elif number.count('.')==1:
+    split=number.split('.')
+    if split[0].isdigit() and split[1].isdigit():
+        is_positive_float = True
+    else:
+        print('False')
+elif number.count('.')==0 and number.isdigit():
+    is_positive_float = True
+else:
+    print('False')
+if is_positive_float:
+    print('True')
 
 #5 for negative values
 number = input("Enter the number: ")
 is_negative_float = False
 
-if number.count('.') > 1 or number[-1]=='.' or number[0]!='-' or number.count('-') > 1:
+if number.count('.') > 1 or number[-1]=='.' or number[0]!='-' or number.count('-') > 1: 
     print('False')
 else:
-    if number.count('.')==1:
+    if number.count('.')==1: 
         split=number.split('-')[1].split('.')
         if split[0].isdigit() and split[1].isdigit():
             is_negative_float = True
@@ -86,4 +86,4 @@ else:
         is_negative_float=False
         print(is_negative_float)
 if is_negative_float:
-    print('True')
+    print('True') 
