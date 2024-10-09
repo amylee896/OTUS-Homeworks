@@ -15,27 +15,6 @@ def format_transf(line:str):
                 transformed=''.join(lower)
     return(transformed)
 
-#Using key default arguments:
-def format_transf(line:str,case='camel'):
-    if '_' in line and case=='snake':
-        transformed=line
-    elif '_' in line and case=='camel':
-        splitted_string=line.split('_')
-        capital=[x.capitalize() for x in splitted_string]
-        transformed=''.join(capital)
-    elif '_' not in line and case=='camel':
-        transformed=line
-    elif '_' not in line and case=='snake':
-        upper=[i.isupper() for i in line]
-        for i in range(1,len(upper)):
-            upper=[i.isupper() for i in line]
-            if upper[-i]:
-                line=list(line)
-                line.insert(-i,'_')
-                lower=[x.lower() for x in line]
-                transformed=''.join(lower)
-    return(transformed)
-
 #2
 def valid_date():
     line=input('Enter the date: ')
@@ -61,11 +40,13 @@ def valid_date():
 
 #3
 def prime_numb_check(number:int):
-    prime_numb=[1,2,3,5,7,11,13,17,19]
+    prime_numb=[2,3,5,7,11,13,17,19]
     last_number_prime=[1,3,7,9]
     dividers=[3,7,9,11,13,17,19]
     if number in prime_numb:
         result='True'
+    elif number == 1:
+        result=False
     elif int(str(number)[-1]) in last_number_prime:
         for num in dividers:
             if number % num == 0:
@@ -74,6 +55,7 @@ def prime_numb_check(number:int):
     else:
         result='False'
     return result
+
 
 #4
 def input_data():
