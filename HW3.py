@@ -5,15 +5,12 @@ def format_transf(line:str):
         capital=[x.capitalize() for x in splitted_string]
         transformed=''.join(capital)
     else:
-        upper=[i.isupper() for i in line]
-        for i in range(1,len(upper)):
-            upper=[i.isupper() for i in line]
-            if upper[-i]:
-                line=list(line)
-                line.insert(-i,'_')
-                lower=[x.lower() for x in line]
-                transformed=''.join(lower)
-    return(transformed)
+        transformed = []
+        for i, char in enumerate(line):
+            if char.isupper() and i != 0:
+                transformed.append('_')
+            transformed.append(char.lower())
+    return ''.join(transformed)
 
 #2
 def valid_date():
